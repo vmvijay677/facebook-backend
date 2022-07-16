@@ -29,6 +29,10 @@ mongoose.connect(process.env.MONGO_URL, {
     .then(() => console.log("Mongo is Connected"))
     .catch((err) => console.log(err));
 
+app.get("/", (req, res) => {
+    res.send("This is facebook API");
+});
+
 app.use('/auth', AuthRoute);
 app.use('/user', UserRoute);
 app.use('/post', PostRoute);
